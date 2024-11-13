@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Cart</title>
+</head>
+<body>
+    <div th:each="cartItem : ${#ctx.session.cart.getAllItem}">
+        <span th:text="${cartItem.product.productName} + ' | '"></span>
+        <span th:text="${cartItem.unitPrice} + ' | '"></span>
+        <span th:text="${cartItem.quantity} + ' | '"></span>
+    </div>
+</body>
+</html>

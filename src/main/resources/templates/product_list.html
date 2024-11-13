@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <th:block th:insert="flagments/html-head"/>
+</head>
+<body>
+<th:block th:insert="flagments/page-header"/>
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 md:grid-cols-4 gap-3 max-w-7xl mx-auto my-10">
+    <div class="grid" th:each="p :  ${products}">
+        <div class="image thumbnail" title="${p.productDescription}">
+            <img th:src="'model-images/'+${p.productLine}+'/'+${p.productCode}+'.jpg'" height="120"
+                 width="180"/>
+        </div>
+        <div><span th:text="${p.productName}"/> <span style="text-align: right" th:text="${p.msrp}"/>
+            <span style="color: darkred;margin-left: 2px;cursor: pointer"></span>
+        </div>
+    </div>
+    <hr>
+</div>
+</body>
+</html>
